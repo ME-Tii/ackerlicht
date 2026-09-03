@@ -1,0 +1,80 @@
+{
+  "name": "ackerlicht-gartensoftware",
+  "version": "1.2.5",
+  "private": true,
+  "type": "module",
+  "main": "main.mjs",
+  "productName": "Ackerlicht Gartensoftware",
+  "author": "Hof Irmgärtchen",
+  "description": "Gartenplaner für Beete, Boden und Wasser",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --linux --mac --win",
+    "dist:linux": "electron-builder --linux",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "37.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "de.hofirmgaertchen.ackerlicht",
+    "productName": "Ackerlicht Gartensoftware",
+    "copyright": "Copyright © Hof Irmgärtchen",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.mjs",
+      "preload.mjs",
+      "catalog.mjs",
+      "db-menu.mjs",
+      "model-menu.mjs",
+      "www/**/*",
+      "package.json"
+    ],
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        },
+        {
+          "target": "tar.gz",
+          "arch": ["x64"]
+        }
+      ],
+      "category": "Graphics",
+      "synopsis": "Gartenplaner für Beete, Boden und Wasser"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": ["x64", "arm64"]
+        }
+      ],
+      "category": "public.app-category.productivity",
+      "identity": null,
+      "hardenedRuntime": false
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "zip",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

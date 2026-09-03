@@ -1,0 +1,120 @@
+:root,html,html.desktop{
+  color-scheme:dark;
+  --color-bg:#161a17;
+  --color-fg:#e8e3d8;
+  --color-surface:#1e2420;
+  --color-muted:#9b968c;
+  --color-primary:#7aab84;
+  --color-primary-fg:#102014;
+  --color-accent:#8fbf98;
+  --color-danger:#e07070;
+  --color-line:#2e3531;
+  --color-bar:#1a1f1c;
+}
+html,body,#root,html.desktop,html.desktop body,html.desktop #root{
+  background:#161a17!important;
+  color:#e8e3d8!important;
+}
+html.desktop header,html.desktop nav,html.desktop footer,html.desktop [aria-label=Hauptmenü],html.desktop .bg-bar{
+  background-color:#1a1f1c!important;
+  border-color:#2e3531!important;
+  color:#e8e3d8!important;
+}
+.no-print.relative.z-40:has([aria-label=Hauptmenü]){display:none!important}
+html.desktop [aria-label=Objekte],html.desktop .bg-surface,html.desktop aside{
+  background-color:#1e2420!important;
+  color:#e8e3d8!important;
+  border-color:#2e3531!important;
+}
+html.desktop .bg-bg{background-color:#161a17!important}
+html.desktop .text-fg{color:#e8e3d8!important}
+html.desktop .text-muted{color:#9b968c!important}
+html.desktop .text-primary{color:#7aab84!important}
+html.desktop input,html.desktop select,html.desktop textarea{
+  background:#161a17!important;
+  color:#e8e3d8!important;
+  border-color:#2e3531!important;
+}
+html.desktop .tool-btn[aria-pressed=true]{background:#7aab84!important;color:#102014!important}
+.desk-workspace{display:flex;flex:1;min-height:0;min-width:0;position:relative;background:#161a17}
+.desk-workspace>[aria-label=Werkzeuge]{order:1;position:relative;z-index:30;display:flex;flex-direction:column;align-self:stretch;width:fit-content;min-width:3.35rem;max-width:6.9rem;flex-shrink:0;min-height:0;border-bottom:0;border-right:1px solid #2e3531;background:#1a1f1c}
+.desk-workspace>[aria-label=Werkzeuge],
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12{overflow:visible!important}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12{flex:1 1 0;min-height:0;height:0;flex-direction:column!important;flex-wrap:wrap!important;align-items:center;align-content:flex-start;gap:.2rem;padding:.45rem .3rem;width:auto}
+.desk-workspace>[aria-label=Werkzeuge] .desk-v,
+.desk-workspace>[aria-label=Werkzeuge] .ml-auto{display:none}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn{
+  position:relative;
+  width:2.55rem;min-width:2.55rem;height:2.55rem;min-height:2.55rem;
+  padding:0;border-radius:.45rem;
+  font-size:0!important;line-height:0!important;
+  color:#e8e3d8;
+  overflow:visible;
+}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn:hover{background:#2a322c}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn::before{content:"";display:block;width:1.22rem;height:1.22rem;margin:auto;background:currentColor;pointer-events:none;-webkit-mask:var(--ico) center/contain no-repeat;mask:var(--ico) center/contain no-repeat}
+.desk-tip{
+  position:fixed;
+  z-index:2147483647;
+  padding:.3rem .55rem;
+  border-radius:.3rem;
+  background:#0e1210;
+  color:#f2eee6;
+  font-size:12px;
+  line-height:16px;
+  font-weight:600;
+  letter-spacing:0;
+  white-space:nowrap;
+  pointer-events:none;
+  opacity:0;
+  transform:translateY(-50%);
+  box-shadow:0 6px 18px #0009;
+}
+.desk-tip.on{opacity:1}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-pressed=true],
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-expanded=true]{color:#102014;background:#7aab84}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Bearbeiten"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M4 20l3.2-1.1L19 7.1 16.9 5 5.1 16.8 4 20z'/><path d='M14.8 7.1l2.1 2.1'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Zeichnen"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><rect x='4' y='6' width='16' height='12' rx='1.5'/><path d='M4 15l4-3 3 2 5-5 4 3'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Kultur"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M12 21V11'/><path d='M12 11c-4-1-6-4-6-8 4 0 6 3 6 8z'/><path d='M12 11c4-1 6-4 6-8-4 0-6 3-6 8z'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Garten"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' viewBox='0 0 24 24'><rect x='4' y='4' width='16' height='16' rx='1'/><path d='M4 12h16M12 4v16'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Fang"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M7 8a5 5 0 1 1 10 0c0 4-5 6-5 11'/><circle cx='12' cy='8' r='1.4' fill='black' stroke='none'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Ansicht"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' viewBox='0 0 24 24'><path d='M2.5 12s3.5-7 9.5-7 9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z'/><circle cx='12' cy='12' r='2.6'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Drehen"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M20 12a8 8 0 1 1-2.2-5.5'/><path d='M20 4v6h-6'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Löschen"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M4 7h16M9 7V5h6v2M7 7l1 13h8l1-13'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Zoom"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><circle cx='11' cy='11' r='6.2'/><path d='M16 16l5 5'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Objekte"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M12 3l8 4.5v9L12 21l-8-4.5v-9z'/><path d='M12 21V12l8-4.5M12 12L4 7.5'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Inspector"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' viewBox='0 0 24 24'><circle cx='12' cy='12' r='8.2'/><path d='M12 11v6M12 8h.01'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Gruppen"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linejoin='round' viewBox='0 0 24 24'><rect x='4' y='4' width='7' height='7' rx='1'/><rect x='13' y='4' width='7' height='7' rx='1'/><rect x='4' y='13' width='7' height='7' rx='1'/><rect x='13' y='13' width='7' height='7' rx='1'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Control"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' viewBox='0 0 24 24'><path d='M5 8h14M5 16h14'/><circle cx='9' cy='8' r='2' fill='black'/><circle cx='15' cy='16' r='2' fill='black'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Mathe"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' viewBox='0 0 24 24'><path d='M6 7h12M6 12h12M6 17h7'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Modellieren"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M4 8l8-4 8 4v8l-8 4-8-4z'/><path d='M12 12v8M4 8l8 4 8-4'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="2D"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' viewBox='0 0 24 24'><rect x='5' y='5' width='14' height='14' rx='1.5'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="3D"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M12 3l8 4.5v9L12 21l-8-4.5v-9z'/></svg>")}
+.desk-workspace>[aria-label=Werkzeuge]>div:not(:first-child){position:absolute;left:100%;top:0;bottom:0;z-index:40;width:16.5rem;max-height:100%;overflow:auto;flex-direction:column;align-items:stretch;border:0;border-right:1px solid #2e3531;box-shadow:8px 0 24px #0006;background:#1e2420}
+.desk-workspace>[aria-label=Modellieren]{order:2;position:absolute;left:3.35rem;right:0;top:0;z-index:20;background:#1e2420;border-color:#2e3531}
+.desk-workspace:has(>[aria-label=Modellieren])>.desk-stage{padding-top:6.75rem}
+.desk-workspace>.desk-stage{order:3;min-width:0}
+.desk-workspace>[aria-label=Objekte]{order:4;display:flex;flex-direction:column;width:17.5rem;min-width:15.5rem;max-width:20rem;min-height:0!important;flex-shrink:0;border-bottom:0;border-left:1px solid #2e3531;background:#1e2420!important;z-index:21}
+.desk-workspace>[aria-label=Objekte]::before{content:"Objekte";display:block;padding:.7rem .9rem .35rem;font-family:var(--font-display),Georgia,serif;font-size:1.05rem;color:#e8e3d8}
+.desk-workspace>[aria-label=Objekte]>.flex.min-h-12{flex-wrap:wrap;align-items:stretch;gap:.35rem;overflow:visible;min-height:0;padding:.35rem .7rem .55rem}
+.desk-workspace>[aria-label=Objekte]>.flex.min-h-12>span{display:none}
+.desk-workspace>[aria-label=Objekte]>.flex.min-h-12>input{width:100%;min-width:0}
+.desk-workspace>[aria-label=Objekte]>.flex.min-h-12>.tool-btn{min-height:2.1rem;padding:.2rem .55rem;font-size:.78rem!important;line-height:1.2!important}
+.desk-workspace>[aria-label=Objekte]>div.absolute{position:static;max-height:none;flex:1;overflow:auto;border:0;box-shadow:none;padding:.4rem .7rem 1rem}
+.grp-card{margin-top:.5rem;padding:.4rem;border:1px solid #2e3531;border-radius:.35rem;background:#161a17}
+.grp-head{display:flex;gap:.5rem;align-items:center;width:100%;text-align:left}
+.grp-thumb{width:3.6rem;height:2.1rem;flex-shrink:0;object-fit:cover;border-radius:.25rem;background:#243028}
+.grp-meta{min-width:0;flex:1}
+.grp-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.85rem}
+.grp-count{font-size:.7rem;color:#9b968c}
+.grp-stack{margin-top:.35rem;display:grid;gap:.12rem}
+.grp-row{display:flex;align-items:center;gap:.2rem;border-radius:.25rem;padding:.1rem .15rem}
+.grp-row.grp-on,.grp-card.grp-on>.grp-head{background:#2a4a32;outline:1px solid #7aab84;border-radius:.25rem}
+.grp-row.grp-on .grp-rename,.grp-card.grp-on .grp-rename{background:#243828!important}
+.grp-z{width:.9rem;flex-shrink:0;font-size:.65rem;color:#9b968c;font-variant-numeric:tabular-nums}
+.grp-item{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;font-size:.75rem;background:transparent;color:#e8e3d8}
+.grp-zbtn{min-height:1.35rem;min-width:1.35rem;padding:0;font-size:.7rem;line-height:1;background:#1e2420;color:#e8e3d8;border-radius:.2rem}
+.grp-rename{flex:1;min-width:0;min-height:1.6rem;padding:.15rem .35rem;font-size:.8rem!important;line-height:1.2!important;border-radius:.25rem;background:#1e2420!important;color:#e8e3d8!important}
+.grp-nest{margin-top:.35rem;margin-left:.35rem;padding-left:.4rem;border-left:1px solid #2e3531}
+.grp-card .grp-card{margin-top:.35rem;background:#1a1f1c}
+@media print{.desk-workspace>[aria-label=Werkzeuge],.desk-workspace>[aria-label=Objekte],.desk-workspace>[aria-label=Modellieren]{display:none!important}}

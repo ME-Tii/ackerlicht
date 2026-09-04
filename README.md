@@ -8,10 +8,10 @@ Download unter **[Releases](https://github.com/ME-Tii/ackerlicht/releases)**:
 
 | System | Datei |
 |--------|--------|
-| Windows | `Ackerlicht Gartensoftware-1.2.5-win.zip` |
-| Linux | `Ackerlicht Gartensoftware-1.2.5.AppImage` oder `.tar.gz` |
-| macOS Intel | `Ackerlicht-Gartensoftware-1.2.5-mac-x64.zip` |
-| macOS Apple Silicon | `Ackerlicht-Gartensoftware-1.2.5-mac-arm64.zip` |
+| Windows | `Ackerlicht Gartensoftware-1.2.6-win.zip` |
+| Linux | `Ackerlicht Gartensoftware-1.2.6.AppImage` oder `.tar.gz` |
+| macOS Intel | `Ackerlicht-Gartensoftware-1.2.6-mac-x64.zip` |
+| macOS Apple Silicon | `Ackerlicht-Gartensoftware-1.2.6-mac-arm64.zip` |
 
 **Windows:** ZIP entpacken, `Ackerlicht Gartensoftware.exe` starten.  
 **Linux AppImage:** `chmod +x` und ausführen (FUSE nötig).  

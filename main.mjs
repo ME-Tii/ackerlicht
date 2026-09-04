@@ -281,7 +281,7 @@ function openPlannerWindow(port) {
     height: Math.max(800, Math.min(wa.height, 2160)),
     minWidth: 800,
     minHeight: 560,
-    title: "Ackerlicht Gartensoftware 125",
+    title: "Ackerlicht Gartensoftware 126",
     backgroundColor: "#161a17",
     autoHideMenuBar: false,
     backgroundMaterial: "none",

@@ -15,6 +15,7 @@
   };
   const isTopBtn = (el) =>
     !!el?.classList?.contains("tool-btn") && !!el.closest?.(".desk-topbar");
+  const isMiniBtn = (el) => !!el?.classList?.contains("mini-ico");
 
   const placeRail = (btn) => {
     const r = btn.getBoundingClientRect();
@@ -48,7 +49,7 @@
         return;
       }
       if (isRailBtn(btn)) placeRail(btn);
-      else if (isTopBtn(btn)) placeTop(btn);
+      else if (isTopBtn(btn) || isMiniBtn(btn)) placeTop(btn);
       else {
         hide();
         return;
@@ -63,7 +64,7 @@
     "pointerout",
     (e) => {
       const btn = e.target?.closest?.(".tool-btn");
-      if (!btn || (!isRailBtn(btn) && !isTopBtn(btn))) return;
+      if (!btn || (!isRailBtn(btn) && !isTopBtn(btn) && !isMiniBtn(btn))) return;
       const next = e.relatedTarget;
       if (next && (btn.contains(next) || btn === next)) return;
       hide();

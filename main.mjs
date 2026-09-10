@@ -422,6 +422,7 @@ function attachMenu(win) {
         submenu: [
           { label: "Rückgängig", accelerator: "CmdOrCtrl+Z", registerAccelerator: false, click: send("undo") },
           { label: "Wiederholen", accelerator: "CmdOrCtrl+Y", registerAccelerator: false, click: send("redo") },
+          { label: "Wiederholen", accelerator: "CmdOrCtrl+R", registerAccelerator: false, click: send("redo") },
           { type: "separator" },
           { label: "Ausschneiden", accelerator: "CmdOrCtrl+X", registerAccelerator: false, click: send("cut") },
           { label: "Kopieren", accelerator: "CmdOrCtrl+C", registerAccelerator: false, click: send("copy") },
@@ -473,6 +474,7 @@ function attachMenu(win) {
           { label: "Gruppe lösen", click: send("ungroup") },
           { label: "Beet teilen", click: send("split") },
           { label: "Beete vereinen", click: send("merge-beds") },
+          { label: "Felder vereinen", click: send("merge-fields") },
           { label: "Koordinate…", click: send("coord") },
           { label: "Skalieren um…", click: send("scale-dlg") },
           { label: "Drehen um Winkel…", click: send("rot-dlg") },
@@ -484,7 +486,7 @@ function attachMenu(win) {
           { label: "Andere ausblenden", click: send("isolate") },
           { label: "Alle einblenden", click: send("unhide") },
           { label: "Gleiche auswählen", click: send("select-same") },
-          { label: "22,5° drehen", accelerator: "CmdOrCtrl+R", registerAccelerator: false, click: send("rot-90") },
+          { label: "22,5° drehen", click: send("rot-90") },
           { label: "Gleiche Breite", click: send("same-w") },
           { label: "Gleiche Höhe", click: send("same-h") },
           { label: "Fase", click: send("chamfer") },
@@ -492,7 +494,7 @@ function attachMenu(win) {
           { label: "Rechteckige Kopie", click: send("array-rect") },
           { label: "Eigenschaften übertragen", click: send("format-paint") },
           { type: "separator" },
-          { label: "22,5° drehen", accelerator: "CmdOrCtrl+R", registerAccelerator: false, click: send("rot-90") },
+          { label: "22,5° drehen", click: send("rot-90") },
           { label: "Karte leeren", click: send("clear") },
         ],
       },
@@ -1319,6 +1321,15 @@ ipcMain.on("desktop:sync-menu", (e, state) => {
   printOn = !!state?.printMode;
   const win = senderWin(e);
   if (win) attachMenu(win);
+});
+
+// Right-click menu actions from renderer → same path as the app menu bar
+ipcMain.on("desktop:run", (e, action) => {
+  const a = String(action || "").trim();
+  if (!a) return;
+  try {
+    e.sender.send("desktop:menu", a);
+  } catch {}
 });
 
 app.whenReady().then(async () => {

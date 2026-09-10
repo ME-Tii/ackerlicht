@@ -31,4 +31,6 @@ contextBridge.exposeInMainWorld("desktop", {
     ipcRenderer.on("desktop:fullscreen-changed", h);
     return () => ipcRenderer.removeListener("desktop:fullscreen-changed", h);
   },
+  /** Run a menu action in the planner (used by the right-click menu). */
+  run: (action) => ipcRenderer.send("desktop:run", String(action || "")),
 });

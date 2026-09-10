@@ -81,6 +81,7 @@ html.desktop .tool-btn[aria-pressed=true]{background:#7aab84!important;color:#10
 .desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Fang"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M7 8a5 5 0 1 1 10 0c0 4-5 6-5 11'/><circle cx='12' cy='8' r='1.4' fill='black' stroke='none'/></svg>")}
 .desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Ansicht"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' viewBox='0 0 24 24'><path d='M2.5 12s3.5-7 9.5-7 9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z'/><circle cx='12' cy='12' r='2.6'/></svg>")}
 .desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Layer"]{--ico:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%271.8%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%20viewBox%3D%270%200%2024%2024%27%3E%3Cpath%20d%3D%27M12%203l9%205-9%205-9-5%209-5z%27/%3E%3Cpath%20d%3D%27M3%2012l9%205%209-5%27/%3E%3Cpath%20d%3D%27M3%2016l9%205%209-5%27/%3E%3C/svg%3E")}
+.desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Handbuch"]{--ico:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%271.8%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%20viewBox%3D%270%200%2024%2024%27%3E%3Cpath%20d%3D%27M5%204h11a3%203%200%200%201%203%203v13H8a3%203%200%200%200-3%203z%27/%3E%3Cpath%20d%3D%27M5%204v16%27/%3E%3Cpath%20d%3D%27M9%208h6M9%2012h6%27/%3E%3C/svg%3E")}
 .desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Drehen"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M20 12a8 8 0 1 1-2.2-5.5'/><path d='M20 4v6h-6'/></svg>")}
 .desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Löschen"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M4 7h16M9 7V5h6v2M7 7l1 13h8l1-13'/></svg>")}
 .desk-workspace>[aria-label=Werkzeuge]>.flex.min-h-12 .tool-btn[aria-label="Zoom"]{--ico:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><circle cx='11' cy='11' r='6.2'/><path d='M16 16l5 5'/></svg>")}
@@ -96,7 +97,7 @@ html.desktop .tool-btn[aria-pressed=true]{background:#7aab84!important;color:#10
 .desk-workspace>[aria-label=Werkzeuge]>div:not(:first-child){
   position:absolute;
   left:100%;
-  top:0;
+  top:3.15rem;
   bottom:0;
   z-index:40;
   display:flex;
@@ -251,8 +252,10 @@ html.desktop .tool-btn[aria-pressed=true]{background:#7aab84!important;color:#10
 
 .desk-topbar{
   position:relative;z-index:50;flex:0 0 auto;
-  display:flex;flex-wrap:wrap;align-items:center;gap:.28rem;
+  display:flex;flex-wrap:nowrap;align-items:center;gap:.28rem;
   padding:.4rem .45rem;
+  min-height:3.15rem;
+  overflow-x:auto;
   background:#1a1f1c;
   border-bottom:1px solid #2e3531;
   pointer-events:auto;

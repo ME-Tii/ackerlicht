@@ -10,7 +10,7 @@ contextBridge.exposeInMainWorld("desktop", {
   pickDir: () => ipcRenderer.invoke("desktop:pickDir"),
   quit: () => ipcRenderer.invoke("desktop:quit"),
   close: () => ipcRenderer.invoke("desktop:close"),
-  fullscreen: () => ipcRenderer.invoke("desktop:fullscreen"),
+  fullscreen: (on) => ipcRenderer.invoke("desktop:fullscreen", on),
   isFullscreen: () => ipcRenderer.invoke("desktop:isFullscreen"),
   newWindow: () => ipcRenderer.invoke("desktop:newWindow"),
   alwaysTop: () => ipcRenderer.invoke("desktop:alwaysTop"),

@@ -170,10 +170,11 @@ ipcMain.handle("desktop:quit", () => {
   shutdown(0);
 });
 
-ipcMain.handle("desktop:fullscreen", (e) => {
+ipcMain.handle("desktop:fullscreen", (e, on) => {
   const win = senderWin(e);
   if (!win) return false;
-  win.setFullScreen(!win.isFullScreen());
+  if (on === true || on === false) win.setFullScreen(!!on);
+  else win.setFullScreen(!win.isFullScreen());
   return win.isFullScreen();
 });
 
@@ -422,7 +423,7 @@ function attachMenu(win) {
         submenu: [
           { label: "Rückgängig", accelerator: "CmdOrCtrl+Z", registerAccelerator: false, click: send("undo") },
           { label: "Wiederholen", accelerator: "CmdOrCtrl+Y", registerAccelerator: false, click: send("redo") },
-          { label: "Wiederholen", accelerator: "CmdOrCtrl+R", registerAccelerator: false, click: send("redo") },
+          { label: "Wiederholen", accelerator: "CmdOrCtrl+Shift+Z", registerAccelerator: false, click: send("redo") },
           { type: "separator" },
           { label: "Ausschneiden", accelerator: "CmdOrCtrl+X", registerAccelerator: false, click: send("cut") },
           { label: "Kopieren", accelerator: "CmdOrCtrl+C", registerAccelerator: false, click: send("copy") },
@@ -460,7 +461,7 @@ function attachMenu(win) {
             ],
           },
           { label: "Verschieben um…", click: send("nudge") },
-          { label: "Drehen 15°", click: send("rot+") },
+          { label: "Drehen 15°", accelerator: "CmdOrCtrl+Shift+R", registerAccelerator: false, click: send("rot+") },
           { label: "Drehen −15°", click: send("rot-") },
           { label: "Weg verlängern", click: send("extend") },
           { label: "Versatz 0,4 m", click: send("offset") },
@@ -471,9 +472,9 @@ function attachMenu(win) {
           { label: "Spiegeln senkrecht", click: send("mirror-v") },
           { label: "Polarkopie…", click: send("polar-dlg") },
           { label: "Gruppieren", accelerator: "CmdOrCtrl+G", registerAccelerator: false, click: send("group") },
-          { label: "Gruppe lösen", click: send("ungroup") },
+          { label: "Gruppe lösen", accelerator: "CmdOrCtrl+Shift+G", registerAccelerator: false, click: send("ungroup") },
           { label: "Beet teilen", click: send("split") },
-          { label: "Beete vereinen", click: send("merge-beds") },
+          { label: "Beete vereinen", accelerator: "CmdOrCtrl+E", registerAccelerator: false, click: send("merge-beds") },
           { label: "Felder vereinen", click: send("merge-fields") },
           { label: "Koordinate…", click: send("coord") },
           { label: "Skalieren um…", click: send("scale-dlg") },
